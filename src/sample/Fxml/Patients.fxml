@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<!--<?import com.sun.javafx.webkit.theme.RenderThemeImpl.*?>-->
+<GridPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml" alignment="center" vgap="10" hgap="10"
+          gridLinesVisible="false">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+    </padding>
+    <columnConstraints>
+        <ColumnConstraints percentWidth="20.0"/>
+        <ColumnConstraints percentWidth="80"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints percentHeight="1000.0"/>
+    </rowConstraints>
+
+    <GridPane alignment="CENTER"  GridPane.rowIndex="0" GridPane.columnIndex="0"
+              style="-fx-background-color: aqua; -fx-font-size: 20; -fx-font-family: 'Times New Roman';">
+        <Label text="Tools and Technology" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <Label text="_____________________" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <Label text="1. Java" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+        <Label text="2. MongoDB" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+        <Label text="3. Genetic Algorithm" GridPane.rowIndex="4" GridPane.columnIndex="2"/>
+        <Label text="4. Weka Data Mining" GridPane.rowIndex="5" GridPane.columnIndex="2"/>
+    </GridPane>
+
+    <FlowPane GridPane.rowIndex="0" GridPane.columnIndex="1" hgap="30" vgap="50" alignment="TOP_CENTER"
+              style="-fx-background-color: orange; -fx-font-family: 'Times New Roman'; -fx-font-size: 17;">
+        <GridPane hgap="15" vgap="15" alignment="TOP_CENTER" GridPane.columnIndex="1" GridPane.rowSpan="5">
+            <VBox spacing="10" GridPane.rowIndex="4" alignment="TOP_CENTER" GridPane.columnSpan="10" style="-fx-text-fill: green; -fx-font-size: 20;-fx-font-family: 'Arial Black'">
+                <Label text="Welcome to" />
+                <Label text="Heart Diseases Prediction System"/>
+            </VBox>
+            <Label text="Patients Details" GridPane.rowIndex="6" GridPane.columnIndex="1" style="-fx-text-fill: black; -fx-font-size: 20;-fx-font-family: 'Arial Black'"/>
+            <Label text="First Name" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+                <TextField fx:id="fName" GridPane.rowIndex="7" GridPane.columnIndex="2"/>
+            <Label text="Middle Name" GridPane.rowIndex="7" GridPane.columnIndex="3"/>
+                <TextField fx:id="mName" GridPane.rowIndex="7" GridPane.columnIndex="4"/>
+            <Label text="Last Name" GridPane.rowIndex="7" GridPane.columnIndex="5"/>
+                <TextField fx:id="lName" GridPane.rowIndex="7" GridPane.columnIndex="6"/>
+            <Label text="Date of Birth" GridPane.rowIndex="8" GridPane.columnIndex="1" />
+                <DatePicker fx:id="date" editable="false" GridPane.rowIndex="8" GridPane.columnIndex="2"/>
+            <Label text="Gender" GridPane.rowIndex="8" GridPane.columnIndex="3" GridPane.columnSpan="1"/>
+                <fx:define>
+                    <ToggleGroup fx:id="sex"/>
+                </fx:define>
+                <HBox spacing="20" GridPane.rowIndex="8" GridPane.columnIndex="4" GridPane.columnSpan="1">
+                    <RadioButton fx:id="male" text="Male" toggleGroup="$sex"/>
+                    <RadioButton fx:id="female" text="Fe-Male" toggleGroup="$sex"/>
+                </HBox>
+            <Label text="Contact No." GridPane.rowIndex="8" GridPane.columnIndex="5" GridPane.columnSpan="1"/>
+                <TextField fx:id="contact" GridPane.rowIndex="8" GridPane.columnIndex="6"/>
+            <Label text="Address" GridPane.rowIndex="9" GridPane.columnIndex="1" GridPane.columnSpan="1"/>
+            <TextField fx:id="address" GridPane.rowIndex="9" GridPane.columnIndex="2"/>
+
+            <Label text="Medical Information"  GridPane.rowIndex="10" GridPane.columnIndex="1" style="-fx-text-fill: black; -fx-font-size: 20;-fx-font-family: 'Arial Black'"/>
+            <Label text="Chest Pain type" GridPane.rowIndex="11" GridPane.columnIndex="1"/>
+                <ComboBox fx:id="cp" GridPane.rowIndex="11" GridPane.columnIndex="2" GridPane.columnSpan="5" >
+                    <items>
+                        <FXCollections fx:factory = "observableArrayList">
+                            <String fx:value="0"/>
+                            <String fx:value="1"/>
+                            <String fx:value="2"/>
+                            <String fx:value="3"/>
+                        </FXCollections>
+                    </items>
+                    <value>
+                        <String fx:value="Choose any one option" />
+                    </value>
+                </ComboBox>
+            <Label text="Trestbps" GridPane.rowIndex="11" GridPane.columnIndex="3"/>
+                <TextField fx:id="trestbps" GridPane.rowIndex="11" GridPane.columnIndex="4"/>
+            <Label text="Cholestoral " GridPane.rowIndex="11" GridPane.columnIndex="5"/>
+                <TextField fx:id="chol" GridPane.rowIndex="11" GridPane.columnIndex="6"/>
+            <Label text="Fbs" GridPane.rowIndex="12" GridPane.columnIndex="1"/>
+                <ComboBox fx:id="fbs" GridPane.rowIndex="12" GridPane.columnIndex="2" GridPane.columnSpan="5" editable="false">
+                    <items>
+                        <FXCollections fx:factory = "observableArrayList">
+                            <String fx:value="0"/>
+                            <String fx:value="1"/>
+                        </FXCollections>
+                    </items>
+                    <value>
+                        <String fx:value="Choose any one option" />
+                    </value>
+                </ComboBox>
+            <Label text="restecg" GridPane.rowIndex="12" GridPane.columnIndex="3"/>
+                <ComboBox fx:id="ecg" GridPane.rowIndex="12" GridPane.columnIndex="4" GridPane.columnSpan="5" editable="false">
+                    <items>
+                        <FXCollections fx:factory = "observableArrayList">
+                            <String fx:value="0"/>
+                            <String fx:value="1"/>
+                        </FXCollections>
+                    </items>
+                    <value>
+                        <String fx:value="Choose any one option" />
+                    </value>
+                </ComboBox>
+            <Label text="Thalach" GridPane.rowIndex="12" GridPane.columnIndex="5"/>
+                <TextField fx:id="thalach" GridPane.rowIndex="12" GridPane.columnIndex="6"/>
+            <Label text="Exang" GridPane.rowIndex="13" GridPane.columnIndex="1"/>
+                <ComboBox fx:id="exang" GridPane.rowIndex="13" GridPane.columnIndex="2" GridPane.columnSpan="5" editable="false">
+                    <items>
+                        <FXCollections fx:factory = "observableArrayList">
+                            <String fx:value="0"/>
+                            <String fx:value="1"/>
+                        </FXCollections>
+                    </items>
+                    <value>
+                        <String fx:value="Choose any one option" />
+                    </value>
+                </ComboBox>
+            <Label text="Oldpeak" GridPane.rowIndex="13" GridPane.columnIndex="3"/>
+                <TextField fx:id="oldpeak" GridPane.rowIndex="13" GridPane.columnIndex="4"/>
+            <Label text="Slop" GridPane.rowIndex="13" GridPane.columnIndex="5"/>
+                <ComboBox fx:id="slop" GridPane.rowIndex="13" GridPane.columnIndex="6" GridPane.columnSpan="5" editable="false">
+                    <items>
+                        <FXCollections fx:factory = "observableArrayList">
+                            <String fx:value="0"/>
+                            <String fx:value="1"/>
+                            <String fx:value="2"/>
+                        </FXCollections>
+                    </items>
+                    <value>
+                        <String fx:value="Choose any one option" />
+                    </value>
+                </ComboBox>
+            <Label text="Ca" GridPane.rowIndex="14" GridPane.columnIndex="1"/>
+                <ComboBox fx:id="ca" GridPane.rowIndex="14" GridPane.columnIndex="2" GridPane.columnSpan="5" editable="false">
+                    <items>
+                        <FXCollections fx:factory = "observableArrayList">
+                            <String fx:value="0"/>
+                            <String fx:value="1"/>
+                            <String fx:value="2"/>
+                            <String fx:value="3"/>
+                        </FXCollections>
+                    </items>
+                    <value>
+                        <String fx:value="Choose any one option" />
+                    </value>
+                </ComboBox>
+            <Label text="Thal" GridPane.rowIndex="14" GridPane.columnIndex="3"/>
+                <ComboBox fx:id="thal" GridPane.rowIndex="14" GridPane.columnIndex="4" GridPane.columnSpan="5" editable="false">
+                    <items>
+                        <FXCollections fx:factory = "observableArrayList">
+                            <String fx:value="0"/>
+                            <String fx:value="1"/>
+                            <String fx:value="2"/>
+                            <String fx:value="3"/>
+                        </FXCollections>
+                    </items>
+                    <value>
+                        <String fx:value="Choose any one option" />
+                    </value>
+                </ComboBox>
+
+
+            <ToggleButton fx:id="submit" text="Submit" GridPane.rowIndex="15" GridPane.columnIndex="1" onAction="#input"/>
+            <ToggleButton fx:id="back" text="Back" GridPane.rowIndex="15" GridPane.columnIndex="4" onAction="#Logout"/>
+        </GridPane>
+    </FlowPane>
+</GridPane>
+
+

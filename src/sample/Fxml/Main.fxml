@@ -1,0 +1,45 @@
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.geometry.Insets?>
+<GridPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml" alignment="center" vgap="10"
+          gridLinesVisible="true">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+    </padding>
+    <columnConstraints>
+        <ColumnConstraints percentWidth="40.0"/>
+        <ColumnConstraints percentWidth="60"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints percentHeight="1000.0"/>
+    </rowConstraints>
+
+    <GridPane alignment="CENTER"  GridPane.rowIndex="0" GridPane.columnIndex="0"
+              style="-fx-background-color: aqua; -fx-font-size: 20; -fx-font-family: 'Times New Roman';">
+        <Label text="Tools and Technology" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <Label text="_____________________" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <Label text="1. Java" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+        <Label text="2. MongoDB" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+        <Label text="3. Genetic Algorithm" GridPane.rowIndex="4" GridPane.columnIndex="2"/>
+        <Label text="4. Weka Data Mining" GridPane.rowIndex="5" GridPane.columnIndex="2"/>
+    </GridPane>
+
+    <FlowPane GridPane.rowIndex="0" GridPane.columnIndex="1" hgap="10" vgap="10" alignment="CENTER"
+              style="-fx-background-color: orange; -fx-font-family: 'Times New Roman'; -fx-font-size: 17;">
+        <GridPane hgap="10" vgap="10" alignment="CENTER">
+            <VBox spacing="10" alignment="CENTER" GridPane.columnSpan="5">
+                <Label text="Welcome to" style="-fx-font-family: 'Times New Roman'; -fx-font-size: 25; -fx-text-fill: Green"/>
+                <Label text="Heart Diseases Prediction System" style="-fx-font-family: 'Times New Roman'; -fx-font-size: 25; -fx-text-fill: Green"/>
+            </VBox>
+            <Button text="New Patients" GridPane.rowIndex="6" GridPane.columnIndex="1" prefWidth="150" onAction="#NewPatients"/>
+            <Button text="List All Patients" GridPane.rowIndex="6" GridPane.columnIndex="2" prefWidth="150" onAction="#ListPatients"/>
+            <Button text="Logout" GridPane.rowIndex="6" GridPane.columnIndex="3" prefWidth="150" onAction="#Logout"/>
+        </GridPane>
+    </FlowPane>
+
+</GridPane>
